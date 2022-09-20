@@ -16,7 +16,7 @@
 
 <script>
 export default {}
-</script>     
+</script>
 <style scoped>
 .SiteNav:focus-within ul {
   @apply opacity-100 visible w-max h-auto;
@@ -32,7 +32,7 @@ ul {
   @apply md:relative right-0 flex md:flex-row md:bg-transparent md:items-center md:gap-4 md:opacity-100 md:visible md:w-max md:h-auto md:shadow-none md:p-0 md:font-bold md:text-sm text-gray-700 md:overflow-visible;
 }
 
-li{
-    @apply hover:text-gray-900;
+li {
+  @apply hover:text-gray-900;
 }
 </style>

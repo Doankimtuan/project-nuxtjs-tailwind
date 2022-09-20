@@ -7,7 +7,11 @@
       </div>
     </header>
     <ul class="m-auto px-4 max-w-5xl mb-12">
-      <project-card v-for="project in projects" :key="project.id" :project="project.attributes" />
+      <project-card
+        v-for="project in projects"
+        :key="project.id"
+        :project="project.attributes"
+      />
     </ul>
   </main>
 </template>
@@ -17,9 +21,10 @@ export default {
   async asyncData({ store, $axios }) {
     try {
       // const projects = await $strapi.$projects.find()
-      const { data } = await $axios.$get(`${store.state.apiUrl}/projects?populate=*`)
+      const { data } = await $axios.$get(
+        `${store.state.apiUrl}/projects?populate=*`
+      )
 
-      
       return { projects: data }
     } catch (error) {
       console.log(error)

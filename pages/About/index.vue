@@ -3,10 +3,12 @@
     <header>
       <div class="wrapper"></div>
       <div class="cover img-cont h-full max-h-72">
-        <img class=" rounded-b-2xl" src="~/assets/img/hero.jpg" alt="" />
+        <img class="rounded-b-2xl" src="~/assets/img/hero.jpg" alt="" />
       </div>
     </header>
-    <div class="cont relative bg-gray-50 p-12 z-10 m-auto max-w-6xl rounded-2xl">
+    <div
+      class="cont relative bg-gray-50 p-12 z-10 m-auto max-w-6xl rounded-2xl"
+    >
       <article class="prose prose-xl m-auto w-full">
         <h1 class="hero-text">About Us</h1>
         <!-- <h2>Some more</h2> -->

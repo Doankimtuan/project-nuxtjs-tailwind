@@ -2,9 +2,13 @@
   <footer class="site-footer bg-gray-800 text-gray-50 p-4">
     <div class="cont py-12 m-auto max-w-6xl">
       <div class="wrapper md:grid grid-cols-5">
-        <header style="height: max-content" class="grid col-start-1 col-end-4 mb-6 text-center md:text-left" >
+        <header
+          style="height: max-content"
+          class="grid col-start-1 col-end-4 mb-6 text-center md:text-left"
+        >
           <figure
-            class=" SiteLogo flex items-center justify-center md:justify-start gap-2 mb-2 " >
+            class="SiteLogo flex items-center justify-center md:justify-start gap-2 mb-2"
+          >
             <nuxt-logo class="w-12" />
             <h1 class="text-2xl font-black">Designli</h1>
           </figure>
@@ -33,7 +37,11 @@
             <ul>
               <li><nuxt-link to="/contact">Send us a message</nuxt-link></li>
               <li><a href="tel:+84913622928">+84913622928</a></li>
-              <li><a href="mailto:doantuan21101999@gmail.com">doantuan21101999@gmail.com</a></li>
+              <li>
+                <a href="mailto:doantuan21101999@gmail.com"
+                  >doantuan21101999@gmail.com</a
+                >
+              </li>
             </ul>
           </section>
         </div>

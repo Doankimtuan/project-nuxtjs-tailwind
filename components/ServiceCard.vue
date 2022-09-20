@@ -5,9 +5,9 @@
         <img v-if="coverImageUrl" :src="coverImageUrl" alt="" />
       </div>
       <div class="text-wrapper p-4">
-        <h3 class="font-bold text-xl mb-2">{{service.name}}</h3>
+        <h3 class="font-bold text-xl mb-2">{{ service.name }}</h3>
         <p class="mb-2">
-          {{service.description}}
+          {{ service.description }}
         </p>
       </div>
     </header>
@@ -18,12 +18,13 @@
 export default {
   props: ['service'],
   computed: {
-    coverImageUrl(){
+    coverImageUrl() {
       const url = this.$store.state.url
-      const imagePath = this.service?.cover?.data?.attributes?.formats?.thumbnail?.url
+      const imagePath =
+        this.service?.cover?.data?.attributes?.formats?.thumbnail?.url
       return url + imagePath
-    }
-  }
+    },
+  },
 }
 </script>
 

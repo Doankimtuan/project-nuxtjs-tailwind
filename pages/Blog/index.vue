@@ -7,7 +7,6 @@
       </div>
     </header>
     <ul class="m-auto px-4 max-w-5xl grid gap-8 mb-12">
-      
       <article-card
         v-for="article in articles"
         :key="article.Slug"
@@ -21,8 +20,10 @@
 export default {
   async asyncData({ store, $axios }) {
     try {
-      const { data } = await $axios.$get(`${store.state.apiUrl}/articles?populate=*`)
-      
+      const { data } = await $axios.$get(
+        `${store.state.apiUrl}/articles?populate=*`
+      )
+
       return { articles: data }
     } catch (error) {
       console.log(error)

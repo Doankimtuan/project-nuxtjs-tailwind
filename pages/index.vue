@@ -1,7 +1,9 @@
 <template>
   <main>
     <section class="site-section hero-section h-screen">
-      <div class="wrapper flex items-center justify-center h-full m-auto max-w-6xl">
+      <div
+        class="wrapper flex items-center justify-center h-full m-auto max-w-6xl"
+      >
         <header class="text-center md:w-2/3">
           <h1 class="hero-text md:text-7xl">Designli - Beautiful Innovation</h1>
           <p class="mb-4">
@@ -23,8 +25,14 @@
             </p>
           </div>
         </header>
-        <ul class="services grid md:grid-cols-3 gap-6 transform md:-translate-y-20">
-          <service-card v-for="service in services" :key="service.id" :service="service.attributes" />
+        <ul
+          class="services grid md:grid-cols-3 gap-6 transform md:-translate-y-20"
+        >
+          <service-card
+            v-for="service in services"
+            :key="service.id"
+            :service="service.attributes"
+          />
         </ul>
       </div>
     </section>
@@ -35,7 +43,11 @@
           <p>We at Designli are obsessed with beautiful innovation.</p>
         </header>
         <ul v-if="projects" class="projects">
-          <project-card v-for="project in projects" :key="project.id" :project="project.attributes" />
+          <project-card
+            v-for="project in projects"
+            :key="project.id"
+            :project="project.attributes"
+          />
         </ul>
         <div class="action-cont text-center mt-12">
           <nuxt-link to="/projects">
@@ -45,14 +57,26 @@
       </div>
     </section>
     <section class="site-section blog-section">
-      <div class=" wrapper py-12 md:grid gap-8 grid-cols-7 items-center m-auto max-w-6xl">
-        <header style="height: min-content" class="md:grid col-start-1 col-end-3 mb-8">
+      <div
+        class="wrapper py-12 md:grid gap-8 grid-cols-7 items-center m-auto max-w-6xl"
+      >
+        <header
+          style="height: min-content"
+          class="md:grid col-start-1 col-end-3 mb-8"
+        >
           <h1 class="header-text">Our Blog</h1>
           <p class="mb-2">Helpful content from from the team to you.</p>
           <button class="cta w-max">Explore our blog</button>
         </header>
-        <ul v-if="articles" class="articles md:grid gap-6 col-start-3 col-end-8">
-          <article-card v-for="article in articles" :key="article.id" :article="article.attributes" />
+        <ul
+          v-if="articles"
+          class="articles md:grid gap-6 col-start-3 col-end-8"
+        >
+          <article-card
+            v-for="article in articles"
+            :key="article.id"
+            :article="article.attributes"
+          />
         </ul>
       </div>
     </section>
@@ -60,24 +84,33 @@
 </template>
 
 <script>
-  export default {
-    mounted() {
+export default {
+  mounted() {
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
       setTimeout(() => this.$nuxt.$loading.finish(), 5000)
     })
   },
-    async asyncData({ $axios, store }) {
-      try {
-        const services = await $axios.$get(`${store.state.apiUrl}/project-categories?populate=*`)
-        const projects = await  $axios.$get(`${store.state.apiUrl}/projects?populate=*`)
-        const articles = await $axios.$get(`${store.state.apiUrl}/articles?populate=*`)
+  async asyncData({ $axios, store }) {
+    try {
+      const services = await $axios.$get(
+        `${store.state.apiUrl}/project-categories?populate=*`
+      )
+      const projects = await $axios.$get(
+        `${store.state.apiUrl}/projects?populate=*`
+      )
+      const articles = await $axios.$get(
+        `${store.state.apiUrl}/articles?populate=*`
+      )
 
-        return { projects: projects.data, articles: articles.data, services: services.data }
-      } catch (error) {
-        console.log(error)
+      return {
+        projects: projects.data,
+        articles: articles.data,
+        services: services.data,
       }
-    },
-  }
-
+    } catch (error) {
+      console.log(error)
+    }
+  },
+}
 </script>

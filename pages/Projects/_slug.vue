@@ -41,9 +41,10 @@ export default {
   // use destructuring to get the context.params and context.store
   async asyncData({ params, store, $axios }) {
     try {
-
       // fetch data by slug using Strapi query filters
-      const { data } = await $axios.$get(`${store.state.apiUrl}/projects?filters[slug][$eq]=${params.slug}&populate=*`)
+      const { data } = await $axios.$get(
+        `${store.state.apiUrl}/projects?filters[slug][$eq]=${params.slug}&populate=*`
+      )
 
       return { project: data[0].attributes }
     } catch (error) {
